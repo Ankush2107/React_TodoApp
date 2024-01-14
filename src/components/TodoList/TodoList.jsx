@@ -1,7 +1,9 @@
 import Todo from "../Todo/Todo";
+import TodoContext from "../../context/TodoContext";
+import { useContext } from "react";
 
-const TodoList = ({ list, updateList }) => {
-    
+const TodoList = () => {
+    const {list, setList} = useContext(TodoContext);
   return (
     <div>
       { list.length > 0 && list.map((todo) => (
@@ -22,7 +24,7 @@ const TodoList = ({ list, updateList }) => {
                         }
                         return t;
                     });
-                    updateList(updatedList);
+                    setList(updatedList);
                 }}
             />
       ))}
