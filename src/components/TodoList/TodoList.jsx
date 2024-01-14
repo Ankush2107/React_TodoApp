@@ -1,6 +1,6 @@
 import Todo from "../Todo/Todo";
 
-const TodoList = ({ list }) => {
+const TodoList = ({ list, updateList }) => {
     
   return (
     <div>
@@ -10,6 +10,15 @@ const TodoList = ({ list }) => {
                 id={todo.id} 
                 todoData={todo.todoData} 
                 isFinished={todo.finished} 
+                changeFinished={(isFinished) => {
+                    const updatedList = list.map(t => {
+                        if(t.id == todo.id) {
+                            todo.finished = isFinished;
+                        }
+                        return t;
+                    });
+                    updateList(updatedList);
+                }}
             />
       ))}
     </div>
