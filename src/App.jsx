@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <AddTodo updateList={(todo) => console.log([ ...list, {id: list.length + 1, todoData: todo, finished: false}])} />
+      <AddTodo updateList={(todo) => setList([ ...list, {id: list.length + 1, todoData: todo, finished: false}])} />
       <TodoList list={list} updateList={(setList)} />
     </>
   )

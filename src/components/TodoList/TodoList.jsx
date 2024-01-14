@@ -10,6 +10,11 @@ const TodoList = ({ list, updateList }) => {
                 id={todo.id} 
                 todoData={todo.todoData} 
                 isFinished={todo.finished} 
+
+                /*
+                    changeFinished is used to update the finished state of the corresponding todo in the list and then calls updateList to update the overall todo list in the parent component.
+                */  
+                
                 changeFinished={(isFinished) => {
                     const updatedList = list.map(t => {
                         if(t.id == todo.id) {

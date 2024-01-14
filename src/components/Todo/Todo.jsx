@@ -5,8 +5,9 @@ const Todo = ({ todoData, isFinished, changeFinished }) => {
   return (
     <div>
         <input type="checkbox" checked={finished} onChange={(e) => {
-            setFinished(e.target.checked)
-            changeFinished(e.target.checked)
+            setFinished(e.target.checked) // Updates the local finished state with the new checked state of the checkbox I mean superficially.
+
+            changeFinished(e.target.checked) // Internally updates the existing finished value.
         }}  
         />
         { todoData }
