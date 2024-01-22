@@ -17,4 +17,4 @@ const AddTodo = ({ updateList }) => {
   )
 }
 
-export default AddTodo
+export default AddTodo;
