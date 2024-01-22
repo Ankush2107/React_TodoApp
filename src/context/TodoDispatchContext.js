@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export default createContext(null);
+const TodoDispatchContext = createContext(null);
+
+export default TodoDispatchContext;
